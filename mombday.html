@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mom!</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fff3b0; /* soft pastel yellow for cheerful birthday vibe */
+    overflow-x: hidden;
+  }
+
+  .section {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ff4da6;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: bounce 1s ease-out;
+  }
+
+  @keyframes bounce {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  p {
+    color: #333;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+  }
+
+  .signature {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+  }
+
+  /* Polaroid style */
+  .polaroid {
+    display: inline-block;
+    background: #fff;
+    padding: 15px 10px 40px 10px;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: rotate(calc(-5deg + 10deg * var(--i)));
+    transition: transform 0.3s;
+    position: relative;
+  }
+
+  .polaroid img {
+    display: block;
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
+  .polaroid p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+  }
+
+  /* Floating emojis */
+  .emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100px) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
+  }
+
+  /* Confetti */
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+    animation: confetti-fall 4s linear infinite;
+  }
+
+  @keyframes confetti-fall {
+    0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  @media(max-width: 450px) {
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    .emoji { font-size: 1.5rem; }
+    .polaroid { padding: 10px 8px 35px 8px; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- Section 1: Greeting -->
+<div class="section">
+  <h1>Happy Birthday Mom!</h1>
+  <p>Mom, wishing you a day full of love, laughter, and joy. You make every moment brighter and more beautiful. 🎂💐🎉🎁🎈❤️</p>
+  <div class="signature">— Apoorva</div>
+
+  <!-- Floating emojis -->
+  <div class="emoji" style="top:20px; left:10%;">🎂</div>
+  <div class="emoji" style="top:60px; left:70%;">🎉</div>
+  <div class="emoji" style="top:100px; left:40%;">💐</div>
+</div>
+
+<!-- Section 2: Polaroid images -->
+<div class="section">
+  <div class="polaroid" style="--i:0">
+    <img src="momnme.png" alt="Mom Smiling">
+    <p>Mom Smiling</p>
+  </div>
+  <div class="polaroid" style="--i:1">
+    <img src="party.jpeg" alt="Family Together">
+    <p>Family Together</p>
+  </div>
+  <div class="polaroid" style="--i:2">
+    <img src="studio.jpeg" alt="Happy Mom">
+    <p>Happy Mom</p>
+  </div>
+
+  <!-- Floating emojis -->
+  <div class="emoji" style="top:30px; left:20%;">🎈</div>
+  <div class="emoji" style="top:50px; left:60%;">🎁</div>
+</div>
+
+<!-- Confetti dynamically generated -->
+<script>
+for(let i=0; i<50; i++){
+  let confetti = document.createElement('div');
+  confetti.classList.add('confetti');
+  confetti.style.left = Math.random() * 100 + 'vw';
+  confetti.style.top = Math.random() * window.innerHeight + 'px';
+  confetti.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
+  confetti.style.width = confetti.style.height = (Math.random()*8 + 5) + 'px';
+  confetti.style.animationDuration = (Math.random()*3 + 3) + 's';
+  document.body.appendChild(confetti);
+}
+</script>
+
+</body>
+</html>
